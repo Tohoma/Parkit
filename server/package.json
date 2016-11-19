@@ -9,6 +9,7 @@
   "author": "Peyton Cross",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "crypto": "0.0.3",
     "crypto-js": "^3.1.8",
     "express": "^4.14.0",
