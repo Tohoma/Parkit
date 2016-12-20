@@ -14,6 +14,8 @@
     "crypto-js": "^3.1.8",
     "express": "^4.14.0",
     "jsonwebtoken": "^7.1.9",
+    "path": "^0.12.7",
+    "request": "^2.79.0",
     "sequelize": "^3.27.0"
   }
 }
