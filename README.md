@@ -20,7 +20,7 @@ We make sure that stall rates are cheaper than rates in the current area.
 A stall owner can make a few extra bucks while they are at work, school or on vacation.
 
 #About
-TODO
+This application is the intellectual property of PARKIT. This application also serves as Peyton K. Cross' 402 project taught by professor BJ Johnson.
 
 #Acknowledgements
-TODO
+This application is the brain child of Leo and Erik. Without them this app would not be in existance. If you would like to contact us you can email us at (insert generic company email here). I would also like to acknowledge Prof. BJ Johnson as without the class and his teachings this application would not have existed.
