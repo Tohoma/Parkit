@@ -9,13 +9,15 @@ var con = mysql.createConnection({
     database: "users"
 });
 
-con.connect(function(err) {
+con.open = function() {con.connect(function(err) {
     if (err) {
         console.log('Error connecting to database');
         return;
     }
     console.log('Connection established');
-});
+})
+}
+
 
 con.close = function(err) {
     if (err) {
