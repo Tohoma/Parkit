@@ -3,25 +3,29 @@ var mysql = require("mysql");
 
 
 var con = mysql.createConnection({
-	host: process.env.DB_HOST,
-	user: process.env.DB_USER,
-	password: process.env.DB_PASS
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: "users"
 });
 
-con.connect(function(err){
-	if(err) {
-		console.log('Error connecting to database');
-		return;
-	}
-	console.log('Connection established');
+con.connect(function(err) {
+    if (err) {
+        console.log('Error connecting to database');
+        return;
+    }
+    console.log('Connection established');
 });
 
-con.end(function(err){
-	if (err) {
-	console.log(err)
-	console.log("There was an error!");
-	return;
-	}
-	console.log("Connecting ending");
-	
- })
+con.close = function(err) {
+    if (err) {
+        console.log("There was an error!");
+        console.log(err)
+        return;
+    }
+    console.log("Connecting ending");
+
+};
+
+module.exports = con;
+
