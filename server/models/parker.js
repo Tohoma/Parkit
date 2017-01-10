@@ -20,5 +20,13 @@ exports.delete = function(username, callback){
 	})
 };
 
+// db.open();
+// db.query('SELECT * FROM parkers WHERE username = "Sample"', function(err,res) {
+// 	console.log(typeof res);
+// 	console.log(res);
+// 	console.log(res.constructor);
+// 	console.log(res === []);
+// 	db.end(db.close);
+// })
 
 

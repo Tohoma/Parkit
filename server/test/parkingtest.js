@@ -17,5 +17,12 @@ describe('Parker', function (){
 				else done();
 			})
 		})
+	});
+	describe('search', function () {
+		it('should not find the user1 in database', function(done) {
+			parker.search(user1.username, function(err,res) {
+				assert(res.length === 0);
+			})
+		})
 	})
 });
