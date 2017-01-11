@@ -11,7 +11,7 @@ var con = mysql.createConnection({
 
 con.open = function() {con.connect(function(err) {
     if (err) {
-        console.log('Error connecting to database');
+        //console.log('Error connecting to database');
         return;
     }
     console.log('Connection established');
