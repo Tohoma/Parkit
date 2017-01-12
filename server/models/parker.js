@@ -1,10 +1,15 @@
-var db = require('./db');
+//Refactor everything into a single module.exports since search function is needed.
+let db = require('./db');
+let crypto = require('crypto');
 
-//TODO hash password.
 
-db.open();
+let hash = function(password, salt) {
+	return crypto.createHmac('sha512', salt).update(password).digest('hex');
+}
+
 exports.create = function(parker, callback) {
 	db.open();
+	parker.password = hash(parker.password, parker.password + parker.username + parker.password);
 	db.query('INSERT INTO parkers SET ?', parker, function(err,res){
 		if(err) callback(err);
 		callback(null,res.insertID);

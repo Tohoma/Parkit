@@ -1,3 +1,5 @@
+//TODO rearrange delete and search so to avoid multiple callbacks! -Peyton Cross
+
 var parker = require('../models/parker');
 var user1 = {username:"Sample",password:"123"}
 var user2 = {username:"Random", password:"456"}
@@ -51,4 +53,20 @@ describe('Parker', function (){
 			})
 		})
 	});
+	describe('authenticate', function () {
+		it("should autheticate user's password with what's created", function(done) {
+			parker.create(user3, function(err) {
+				parker.authenticate(user3.username, user3.password, function(err, res) {
+					assert(res);
+					done();
+				})
+			})
+		});
+		it("should fail to authenticate", function(done) {
+			parker.authenticate(user3.username, user2.password, function(err,res) {
+				assert(!res);
+				done();
+			})
+		})
+	})
 });
