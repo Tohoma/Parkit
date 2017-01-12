@@ -203,7 +203,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res) {
-    res.sendfile(__dirname +"/public/HomePage.html");
+    res.sendfile(__dirname + "/public/HomePage.html");
 });
 
 app.post('/login', function(req, res) {
@@ -257,14 +257,14 @@ app.post('/lots', function(req, res) {
         lots.forEach(function(lot) {
             console.log(lot.address);
             getDistance(location, lot.address, function(distance) {
-            	console.log(distance.rows[0].elements[0].distance.value)
+                console.log(distance.rows[0].elements[0].distance.value)
                 if (distance.rows[0].elements[0].distance.value < 1609) {
-                	console.log("Less than a mile away");
+                    console.log("Less than a mile away");
                     results.push(lot);
                 }
             })
         })
-        
+
     });
     getDistance("3607 Manhattan Beach Blvd", "1600 Amphitheatre Pkwy, Mountain View", function(result) {
         console.log(result.rows[0].elements[0].distance.value)
