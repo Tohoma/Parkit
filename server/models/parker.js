@@ -1,4 +1,4 @@
-//Refactor everything into a single module.exports since search function is needed.
+//TODO Refactor everything into a single module.exports since search function is needed. -Peyton Cross
 let db = require('./db');
 let crypto = require('crypto');
 
@@ -19,7 +19,6 @@ exports.create = function(parker, callback) {
 exports.delete = function(username, callback) {
     db.open();
     db.query('DELETE FROM parkers WHERE username = ?', username, function(err, res) {
-        //db.end(db.close);
         if (err) callback(err);
         callback(null, res.affectedRows);
 
