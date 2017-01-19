@@ -11,8 +11,12 @@ router.post('/', function(req, res) {
         lastname: req.body.lastname
     }
     Parker.create(parker, function(err, id) {
-        res.redirect('/';)
+        res.redirect('/');
     })
+});
+
+router.get('/', function(req,res) {
+	res.send("Hello!");
 })
 
 module.exports = router;

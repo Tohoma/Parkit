@@ -4,7 +4,7 @@ const express = require('express')
 
 router.use('/parker', require("./parker"))
 
-router.get('/' function(req, res){
+router.get('/', function(req, res){
 	res.send("hello world");
 });
 
