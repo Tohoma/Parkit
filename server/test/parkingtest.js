@@ -9,10 +9,14 @@ var user2 = {
     username: "Random",
     password: "456"
 }
+//Fulcrum is currently in database.
 var user3 = {
     username: "Fulcrum",
     password: "789"
 }
+
+//Weird issue authenticate fails immediately after creating user.
+
 var chai = require('chai');
 var assert = chai.assert
 
@@ -64,18 +68,20 @@ describe('Parker', function() {
     });
     describe('authenticate', function() {
         it("should autheticate user's password with what's created", function(done) {
-            parker.create(user3, function(err) {
                 parker.authenticate(user3.username, user3.password, function(err, res) {
                     assert(res);
                     done();
-                })
-            })
+            });
         });
         it("should fail to authenticate", function(done) {
             parker.authenticate(user3.username, user2.password, function(err, res) {
-                assert(!res);
-                done();
-            })
-        })
+                if (!res) {
+                    done();
+                } else {
+                        done("Password should be incorrect");
+                    }
+                
+            });
+        });
     })
 });

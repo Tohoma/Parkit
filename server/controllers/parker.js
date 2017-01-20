@@ -3,6 +3,7 @@ const express = require('express'),
     Parker = require('../models/parker')
 
 router.post('/', function(req, res) {
+	console.log(req.body);
     let parker = {
         username: req.body.username,
         password: req.body.password,
