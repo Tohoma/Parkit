@@ -4,16 +4,19 @@
   "description": "Revolutionizing Parking",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "hello": "echo 'hi'",
+    "test": "mocha",
+    "js": "find . -type d \\( -path ./node_modules \\) -prune -o -name \"*.js\" -exec $(npm bin)/js-beautify -kr {} +"
   },
   "author": "Peyton Cross",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.15.2",
+    "body-parser": "^1.16.0",
     "crypto": "0.0.3",
     "crypto-js": "^3.1.8",
     "dotenv": "^4.0.0",
     "express": "^4.14.0",
+    "http": "0.0.0",
     "jade": "^1.11.0",
     "jsonwebtoken": "^7.1.9",
     "mysql": "^2.12.0",
@@ -23,6 +26,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "js-beautify": "^1.6.8",
     "mocha": "^3.2.0"
   }
 }
