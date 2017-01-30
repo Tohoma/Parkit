@@ -6,7 +6,7 @@ import com.loopj.android.http.*;
  */
 
 public class ParkitResponse {
-    private static final String BASE_URL = "http://45.55.202.25:3000/";
+    private static final String BASE_URL = "http://162.243.143.124/";
     private static AsyncHttpClient client = new AsyncHttpClient();
 
     public static void get(String url, RequestParams params, AsyncHttpResponseHandler responseHandler) {
