@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Park It</title>
+<style type="text/css">
+.button {border-radius: 15px;
+	font-family: Arial;
+	color: #ffffff;
+	font-size: 20px;
+	padding: 13px 20px 29px 20px;
+	text-decoration: none;
+	float: right;
+	margin-left: 10px;
+	margin-right: 10px;
+	border: none;
+	cursor: pointer;
+	height: auto;
+	min-width: 0px;
+	bottom: 0px;
+	margin-top: 1px;
+}
+.form1 {width: auto;
+	float: right;
+	height: auto;
+}
+.greenBar {width: 100%;
+	background-color: #51B95A;
+}
+
+.logo {width: auto;
+}
+.topBar {}
+.part2bck {	width: 100%;
+	background-image: url(Images/2016-11-18.png);
+	height: autp;
+	background-repeat: no-repeat;
+	background-position: 0% 0%;
+	background-size: cover;
+	padding-top: 5%;
+	padding-bottom: 5%;
+}
+.textBoxCenter {	background-color: #B3B3B3;
+	text-align: center;
+	border: thick solid #B3B3B3;
+	width: 90%;
+	height: 61%;
+	margin-bottom: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	-webkit-box-shadow: 0px 0px 35px;
+	box-shadow: 0px 0px 35px;
+}
+.part3Table {font-size: x-large;
+	padding-top: 1px;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-bottom: 1px;
+	text-align: center;
+}
+.part3bck {width: 100%;
+	background-color: #51B95A;
+	height: auto;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+}
+.registerTable {
+	border: none;
+}
+body {
+	font-family: Arial;
+}
+  .greyButton {
+	background-color: #B3B3B3;
+	height: 6px;
+	margin-top: 30px;
+  }
+  .greenButton {
+	height: 30px;
+	background: #51B95A;
+	margin-top: 30px;
+  }
+		
+  .button a:link {color: white; text-decoration: none}
+  .button a:visited {color:white}
+  .button a:hover {color: black;} 
+  .button a:active {color: black;}
+   a:link {color: black; text-decoration: none}      /* unvisited link */
+   a:visited {color: black;}   /* visited link */
+   a:hover {color: black; font-weight:bold;}     /* mouse over link */
+   a:active {color: black;}   /* selected link */
+	
+#submit {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #51B95A;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+#submit:hover {
+background: #82CC89;
+  text-decoration: none;
+}
+
+</style>
+</head>
+
+<body>
+<div class="topBar">
+  <p class="form1 greyButton button"><a href="Sign In.html">Sign In</a></p>
+  <p class="form1 greenButton button"><a href="History.html">History</a></p>
+  <p class="form1 greenButton button"><a href="Recent.html">Recent</a></p>
+  <p class="form1 greenButton button"><a href="Register.html">Register</a></p>
+  <p class="form1 greenButton button"><a href="index.html">Home</a></p>
+  <a href="index.html"><img src="Images/LogoThumbNail.png" alt="" width="203" height="67" class="logo"/></a>
+  <p class="greenBar">&nbsp;</p>
+</div>
+  <div>
+    <p>&nbsp;</p>
+</div>
+<div class="part2bck">
+    <div class="textBoxCenter">
+      <h1>Owner Register</h1>
+      <form id="form5" name="form5" method="post">
+        <table width="713" border="1" align="center" class="registerTable">
+          <tbody>
+            <tr>
+              <td width="345" align="left"><label for="email">Email:</label>
+              <input type="email" name="email" id="email"></td>
+              <td width="352" align="left"><label for="username">Username:</label>
+              <input type="text" name="username" id="username"></td>
+            </tr>
+            <tr>
+              <td align="left"><label for="password">Password:</label>
+              <input type="password" name="password" id="password"></td>
+              <td align="left"><label for="password2">Confirm Password:</label>
+              <input type="password" name="password2" id="password2"></td>
+            </tr>
+            <tr>
+              <td align="left"><label for="firstName">First Name:</label>
+              <input type="text" name="firstName" id="firstName"></td>
+              <td align="left"><label for="lastName">Last Name:</label>
+              <input type="text" name="lastName" id="lastname"></td>
+            </tr>
+            <tr>
+              <td align="left"><label for="address">Steet Address:</label>
+              <input type="text" name="address" id="address"></td>
+              <td align="left"><label for="textfield6">City:</label>
+              <input type="text" name="City" id="City"></td>
+            </tr>
+            <tr>
+              <td align="left"><label for="State">State:</label>
+              <input type="text" name="State" id="State"></td>
+              <td align="left"><label for="textfield8">Zip Code:</label>
+              <input type="text" name="zip" id="zip"></td>
+            </tr>
+            <tr>
+              <td align="left"><label for="country">Country:</label>
+              <input type="text" name="country" id="country"></td>
+              <td>&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          <input type="submit" name="submit" id="submit" value="Submit">
+        </p>
+      </form>
+  </div>
+</div>
+  <p></p>
+  <div class="part3bck">
+    <p><a href="index.html"><img src="Images/Logo.png" width="194" height="55" alt=""/></a></p>
+    <table width="450" height="66" border="0" cellpadding="5" class="part3Table">
+      <tbody>
+        <tr>
+          <td width="100" height="34" style="text-align: center; font-weight: 50; font-size: x-large;"><a href="Contact Us.html">Contact Us</a></td>
+          <td width="100"><a href="About Us.html">About Us</a></td>
+          <td width="100"><a href="Sign In.html">Sign In</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>&nbsp;</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+.DS_Store
+# pesky Office autosave files
+$*
+#Nice try feds
+.env
+
+
+# Server modules
+node_modules/
