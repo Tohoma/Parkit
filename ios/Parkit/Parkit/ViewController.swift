@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,6 +32,10 @@ class ViewController: UIViewController {
         self.present(signInVC, animated: true, completion: nil)
     }
 
-
+    @IBAction func goToRegistration(_ sender: Any) {
+        let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "registration") as! Registration
+        self.present(registerVC, animated: true, completion: nil)
+    }
+    
 }
 

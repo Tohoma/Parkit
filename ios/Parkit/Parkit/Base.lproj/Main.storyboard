@@ -45,7 +45,7 @@
                                     <color key="titleColor" red="0.33632423200146444" green="0.77591774366833843" blue="0.23705167208007116" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="register:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KM2-yJ-Ywi"/>
+                                    <action selector="goToRegistration:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uoO-4G-mV6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -124,18 +124,33 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vPd-KA-iaU">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Retype Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vPd-KA-iaU">
                                         <rect key="frame" x="8" y="357" width="252" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQs-iU-Jlw">
+                                        <rect key="frame" x="93" y="450" width="64" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Register">
+                                            <color key="titleColor" red="0.336324232" green="0.7759177437" blue="0.2370516721" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmEmail" destination="dLj-bQ-hGT" id="pUW-oW-sTG"/>
+                        <outlet property="confirmPassword" destination="vPd-KA-iaU" id="E2g-SC-gml"/>
+                        <outlet property="email" destination="o8x-5R-s0e" id="fil-Af-yQp"/>
+                        <outlet property="firstName" destination="nra-6H-Myp" id="UOZ-nl-Qx9"/>
+                        <outlet property="lastName" destination="V5O-oo-Xl2" id="FmX-ws-H0A"/>
+                        <outlet property="password" destination="6uh-Je-JiT" id="yPN-Ca-Rag"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4K-g4-ffF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
