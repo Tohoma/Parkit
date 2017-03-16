@@ -31,13 +31,19 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.json.*;
 import com.loopj.android.http.*;
-
+import com.loopj.android.http.JsonHttpResponseHandler;
 import cz.msebera.android.httpclient.Header;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -50,6 +56,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * Id to identity READ_CONTACTS permission request.
      */
     private static final int REQUEST_READ_CONTACTS = 0;
+    public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+    OkHttpClient client = new OkHttpClient();
 
     /**
      * A dummy authentication store containing known user names and passwords.
@@ -207,6 +215,16 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         return password.length() > 4;
     }
 
+    String post(String url, String json) throws IOException {
+        RequestBody body = RequestBody.create(JSON, json);
+        Request request = new Request.Builder()
+                .url(url)
+                .post(body)
+                .build();
+        Response response = client.newCall(request).execute();
+        return response.body().string();
+    }
+
     /**
      * Shows the progress UI and hides the login form.
      */
@@ -317,19 +335,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             RequestParams param = new RequestParams();
             param.put("username", "testuser2");
             param.put("password", "pasword23");
-            ParkitResponse client = new ParkitResponse();
-            client.post("/parkers/login", param, new AsyncHttpResponseHandler() {
-                @Override
-                public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                    Log.i("RESPONSE", responseBody.toString());
-                    Toast.makeText(LoginActivity.this,"Request made Success",Toast.LENGTH_LONG);
-                }
 
-                @Override
-                public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-
-                }
-            });
             
 //            try {
 //                // Simulate network access.
