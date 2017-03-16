@@ -1,6 +1,7 @@
 //TODO rearrange delete and search so to avoid multiple callbacks! -Peyton Cross
 
 var parker = require('../models/parker');
+
 var user1 = {
     username: "Sample",
     password: "123"
@@ -15,16 +16,45 @@ var user3 = {
     password: "789"
 }
 
+var user4 = {
+    username: "Sammy",
+    password: "yg400",
+    streetaddress: "3607 Manhattan Beach Blvd",
+    apt: "55B",
+    city: "Los Angeles",
+    zipcode: 90260,
+    state: "California"
+}
+
+var user5 = {
+    username: "Jammy",
+    password: "yg400",
+    streetaddress: "3607 Manhattan Beach Blvd",
+    apt: "55B",
+    city: "Los Angeles",
+    zipcode: 90260,
+    state: "California"
+}
+
+
+
 //Weird issue authenticate fails immediately after creating user.
 
 var chai = require('chai');
 var assert = chai.assert
 
 
-describe('Parker', function() {
+describe('Account functionality', function() {
     describe('create', function() {
         it('should register account in database', function(done) {
             parker.create(user1, function(err) {
+                if (err) done(err);
+                else done();
+            });
+
+        });
+        it('should register user with house', function(done) {
+            parker.create(user4, function(err) {
                 if (err) done(err);
                 else done();
             });
@@ -37,9 +67,16 @@ describe('Parker', function() {
             })
         })
     });
+    });
     describe('delete', function() {
         it('should delete user account in database', function(done) {
             parker.delete(user1.username, function(err) {
+                if (err) done(err);
+                else done();
+            })
+        })
+        it('should delete user account in database', function(done) {
+            parker.delete(user4.username, function(err) {
                 if (err) done(err);
                 else done();
             })
@@ -83,5 +120,4 @@ describe('Parker', function() {
                 
             });
         });
-    })
-});
+    });
