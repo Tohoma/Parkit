@@ -1,6 +1,6 @@
 //TODO rearrange delete and search so to avoid multiple callbacks! -Peyton Cross
 
-var parker = require('../models/parker');
+var user = require('../models/user');
 
 var user1 = {
     username: "Sample",
@@ -47,21 +47,21 @@ var assert = chai.assert
 describe('Account functionality', function() {
     describe('create', function() {
         it('should register account in database', function(done) {
-            parker.create(user1, function(err) {
+            user.create(user1, function(err) {
                 if (err) done(err);
                 else done();
             });
 
         });
         it('should register user with house', function(done) {
-            parker.create(user4, function(err) {
+            user.create(user4, function(err) {
                 if (err) done(err);
                 else done();
             });
 
         });
         it('should not create account with the same username', function(done) {
-            parker.create(user1, function(err) {
+            user.create(user1, function(err) {
                 if (err) done();
                 else done('Duplicate account created!');
             })
@@ -70,13 +70,13 @@ describe('Account functionality', function() {
     });
     describe('delete', function() {
         it('should delete user account in database', function(done) {
-            parker.delete(user1.username, function(err) {
+            user.delete(user1.username, function(err) {
                 if (err) done(err);
                 else done();
             })
         })
         it('should delete user account in database', function(done) {
-            parker.delete(user4.username, function(err) {
+            user.delete(user4.username, function(err) {
                 if (err) done(err);
                 else done();
             })
@@ -84,16 +84,16 @@ describe('Account functionality', function() {
     });
     describe('search', function() {
         it('should not find the user1 in database', function(done) {
-            parker.search(user1.username, function(err, res) {
+            user.search(user1.username, function(err, res) {
                 assert(res.length === 0);
                 done();
             })
         });
         it('should find user2 in database', function(done) {
-            parker.create(user2, function(err, res) {
-                parker.search(user2.username, function(err, res) {
+            user.create(user2, function(err, res) {
+                user.search(user2.username, function(err, res) {
                     assert(res[0].username === user2.username);
-                    parker.delete(user2.username, function(err) {
+                    user.delete(user2.username, function(err) {
                         if (err) done(err);
                         done();
                     });
@@ -105,13 +105,13 @@ describe('Account functionality', function() {
     });
     describe('authenticate', function() {
         it("should autheticate user's password with what's created", function(done) {
-                parker.authenticate(user3.username, user3.password, function(err, res) {
+                user.authenticate(user3.username, user3.password, function(err, res) {
                     assert(res);
                     done();
             });
         });
         it("should fail to authenticate", function(done) {
-            parker.authenticate(user3.username, user2.password, function(err, res) {
+            user.authenticate(user3.username, user2.password, function(err, res) {
                 if (!res) {
                     done();
                 } else {

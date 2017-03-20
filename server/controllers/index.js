@@ -1,8 +1,8 @@
 const express = require('express')
 , router = express.Router()
-, Parker = require('../models/parker')
+, user = require('../models/user')
 
-router.use('/parker', require("./parker"))
+router.use('/user', require("./user"))
 
 router.get('/', function(req, res){
 	res.send("hello world");

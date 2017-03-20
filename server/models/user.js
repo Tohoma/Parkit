@@ -8,22 +8,23 @@ let hash = (password, salt) => crypto.createHmac('sha512', salt).update(password
 
 let search = (username, callback) => {
     db.open();
-    db.query('SELECT * FROM parkers WHERE username = ?', username, (err, res) => {
+    db.query('SELECT * FROM users WHERE username = ?', username, (err, res) => {
         if (err) callback(err);
         callback(null, res);
     })
 }
 
-exports.create = function(parker, callback) {
+exports.create = function(newUser, callback) {
     db.open();
     //Cloning object
-    let user = (JSON.parse(JSON.stringify(parker)));
-    user.password = hash(parker.password, parker.password + parker.username + parker.password);
-    db.query('INSERT INTO parkers SET ?', user, function(err, res) {
+    let user = (JSON.parse(JSON.stringify(newUser)));
+    user.password = hash(user.password, user.password + user.username + user.password);
+    db.query('INSERT INTO users SET ?', user, function(err, res) {
         if (err) callback(err);
         callback(null, res.insertID);
     });
 };
+
 
 exports.authenticate = function(username, password, callback) {
     db.open();
@@ -35,7 +36,7 @@ exports.authenticate = function(username, password, callback) {
 
 exports.delete = function(username, callback) {
     db.open();
-    db.query('DELETE FROM parkers WHERE username = ?', username, function(err, res) {
+    db.query('DELETE FROM users WHERE username = ?', username, function(err, res) {
         if (err) callback(err);
         callback(null, res.affectedRows);
 
